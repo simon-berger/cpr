@@ -184,7 +184,11 @@ void Session::Impl::SetHeaderInternal() {
 }
 
 void Session::Impl::SetHeader(const Header& header) {
-    header_ = header;
+    if (header_.empty()) {
+        header_ = header;
+    } else {
+        UpdateHeader(header);
+    }
 }
 
 void Session::Impl::UpdateHeader(const Header& header) {
