@@ -11,8 +11,7 @@
 #include <string>
 #include <vector>
 
-namespace cpr {
-namespace util {
+namespace cpr::util {
 
 Cookies parseCookies(curl_slist* raw_cookies) {
     Cookies cookies;
@@ -158,5 +157,4 @@ std::string urlDecode(const std::string& s) {
     return holder.urlDecode(s);
 }
 
-} // namespace util
-} // namespace cpr
+} // namespace cpr::util
